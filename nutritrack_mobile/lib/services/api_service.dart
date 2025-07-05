@@ -5,7 +5,8 @@ import '../models/consumption_log.dart';
 import '../models/recommendation.dart';
 
 class ApiService {
-  static const String baseUrl = 'http://localhost:3001/api';
+  // Use Mac IP for physical device, localhost for simulator
+  static const String baseUrl = 'http://192.168.1.110:3001/api';
   late final Dio _dio;
 
   ApiService() {
@@ -214,7 +215,7 @@ class ApiService {
   // Health check
   Future<bool> checkHealth() async {
     try {
-      final response = await _dio.get('http://localhost:3001/');
+      final response = await _dio.get('http://192.168.1.110:3001/');
       return response.statusCode == 200;
     } catch (e) {
       return false;
