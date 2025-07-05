@@ -1,0 +1,27 @@
+import 'package:flutter/material.dart';
+import 'utils/app_router.dart';
+
+void main() {
+  runApp(const NutriTrackApp());
+}
+
+class NutriTrackApp extends StatelessWidget {
+  const NutriTrackApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp.router(
+      title: 'NutriTrack',
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: const Color(0xFF3B82F6),
+          primary: const Color(0xFF3B82F6),
+          secondary: const Color(0xFF10B981),
+        ),
+        useMaterial3: true,
+        fontFamily: 'Inter',
+      ),
+      routerConfig: appRouter,
+    );
+  }
+}
